@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { DatabindingComponent, PropertyBindingComponent, EventBindingComponent, TwoWayBindingComponent } from './databinding';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,10 @@ import { DatabindingComponent, PropertyBindingComponent, EventBindingComponent, 
     DatabindingComponent,
     PropertyBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
-
+    TwoWayBindingComponent,
+    //
+    LifecycleComponent
+    //
   ],
   imports: [
     BrowserModule,

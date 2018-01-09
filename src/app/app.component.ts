@@ -9,8 +9,13 @@ import { Component } from '@angular/core';
     <fa-databinding></fa-databinding>
   `,*/
   // styleUrls: ['./app.component.css']
-  styles: [`h1 {color: red}`]
+  styles: [`h1 {
+    color: #5ba4ff
+  }`]
 })
 export class AppComponent {
   title:string = 'first app';
+  test:string = 'Starting value';
+  boundValue:number = 5000;
+  delete: boolean = false;
 }

@@ -4,5 +4,15 @@
   </h1>
 </div>
 
-<fa-databinding></fa-databinding>
+<!--data binding component-->
+<!--<fa-databinding></fa-databinding>-->
+<!---->
+<!--life cycle component-->
+<fa-lifecycle *ngIf="!delete" [bindable]="boundValue" >
+  <p #boundContent>{{test}}</p>
+</fa-lifecycle>
+<button (click)="delete = true">Click to delete</button>
+<button (click)="test = 'Changed value'">Click to change Content</button>
+<button (click)="test = boundValue = 2000">Click to change Binding</button>
+<!---->
 
