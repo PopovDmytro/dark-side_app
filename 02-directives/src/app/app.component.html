@@ -5,8 +5,33 @@
 <hr>
 <div [ngStyle]="{'background-color': 'red'}"></div>
 <hr>
-<br>
-<br>
-<br>
 <h2>Custom Attribute Directive</h2>
-<div highlight>Some text</div>
+<div [highlight]="'blue'" [defaultColor]="'red'" >Some text</div>
+<hr>
+<h2>Structural Directive *ngIf</h2>
+
+<div *ngIf="switch">Conditional Text</div>
+
+<button type="button" (click)="onSwitch()">Switch</button>
+<hr>
+<h2>Structural Directive *ngFor</h2>
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{item}} - (Index: {{i}})
+  </li>
+</ul>
+<hr>
+<h2>Structural Directive *ngSwitch</h2>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="10">10</p>
+  <p *ngSwitchCase="101">101</p>
+  <p *ngSwitchCase="102">102</p>
+  <p *ngSwitchCase="103">103</p>
+  <p *ngSwitchCase="100">100</p>
+  <p *ngSwitchDefault>1000</p>
+</div>
+<br><br><br>
+<br><br><br><br>
+<hr>
+<h2>Custom structure directive</h2>
+<div *unless="switch">Condition text custom directive</div>

@@ -8,9 +8,12 @@ import { Recipe } from '../recipe'
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recepies: Recipe[] = [];
+  recepies: Recipe[] = [
+    new Recipe('Dummy', 'Dummy', 'https://static01.nyt.com/images/2015/08/14/dining/14ROASTEDSALMON/14ROASTEDSALMON-articleLarge.jpg', []),
+    new Recipe('Bunny', 'Bunny', 'https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--488691_11.jpg?itok=ExaTspz1', []),
+    new Recipe('Third', 'Lorem ipsum', 'http://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_900x675/public/image/2016/09/main/1101-chicken-fajitas-ck-1.jpg?itok=Uw45REAY', [])
+  ];
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy', 'https://www.elegantthemes.com/blog/wp-content/uploads/2017/07/wordpress-lorem-ipsum.png');
 
   constructor() { }
 
