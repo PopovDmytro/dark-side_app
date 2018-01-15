@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Rx'
 @Component({
   selector: 'app-user-details',
   template: `
+    <h3>user detail</h3>
     <button (click)="onNavigate()">go home</button>
     <hr>
     {{id}}
