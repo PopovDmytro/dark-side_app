@@ -10,8 +10,14 @@ export class TemplateDrivenComponent implements OnInit {
   user = {
     username: 'One',
     email: 'email@com.com',
-    pass: 'test'
+    pass: 'test',
+    gender: ''
   };
+
+  genders: string[] = [
+    'male',
+    'female'
+  ];
 
   constructor() { }
 
@@ -19,7 +25,7 @@ export class TemplateDrivenComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(this.user);
+    console.log(form.value);
   }
 
 }
