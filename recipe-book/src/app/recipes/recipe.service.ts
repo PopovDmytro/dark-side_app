@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClient } from "@angular/common/http";
+//
 import { Recipe } from "./recipe";
-import {Ingredient} from "../shared/ingredient";
+import { Ingredient } from "../shared/ingredient";
 
 @Injectable()
 export class RecipeService {
@@ -13,7 +15,7 @@ export class RecipeService {
     new Recipe('Third', 'Lorem ipsum', 'http://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_900x675/public/image/2016/09/main/1101-chicken-fajitas-ck-1.jpg?itok=Uw45REAY', [])
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getRecipes() {
     return this.recipes;
@@ -33,6 +35,18 @@ export class RecipeService {
 
   editRecipe (oldRecipe: Recipe, newRecipe: Recipe) {
     this.recipes[this.recipes.indexOf(oldRecipe)] = newRecipe;
+  }
+
+  storeData () {
+    const body = JSON.stringify(this.recipes);
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+
+  fetchData () {
+
   }
 
 }
