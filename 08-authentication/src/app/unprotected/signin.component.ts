@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Observable } from "rxjs/Observable";
+//
+import {AuthService} from "../shared/auth.service";
 
 @Component({
   selector: 'app-singin',
@@ -26,10 +28,10 @@ export class SigninComponent implements OnInit {
   error = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   onSignin() {
-
+    this.authService.signinUser(this.myForm.value)
   }
 
   ngOnInit():any {

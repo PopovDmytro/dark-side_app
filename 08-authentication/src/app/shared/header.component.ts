@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'my-header',
@@ -14,9 +15,9 @@ import { Component, OnInit } from '@angular/core';
             <li><a [routerLink]="['protected']">Protected</a></li>
 
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+          <ul *ngIf="isAuth()" class="nav navbar-nav navbar-right">
 
-            <li><a>Logout</a></li>
+            <li ><a (click)="onLogOut()">Logout</a></li>
           </ul>
         </div><!-- /.container-fluid -->
 
@@ -28,9 +29,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  isAuth() {
+    return this.authService.isAuthenticated();
+  }
+
+  onLogOut() {
+    this.authService.logOut();
   }
 
 }

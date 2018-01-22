@@ -3,6 +3,7 @@ import { Routes, RouterModule, provideRoutes } from '@angular/router'
 import { SignupComponent } from './unprotected/signup.component';
 import { SigninComponent } from './unprotected/signin.component';
 import { ProtectedComponent } from "./protected/protected.component";
+import { AuthGuard } from "./shared/auth.guard";
 
 
 const APP_ROUTES: Routes = [
@@ -21,7 +22,8 @@ const APP_ROUTES: Routes = [
   },
   {
     path: 'protected',
-    component: ProtectedComponent
+    component: ProtectedComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
