@@ -1,10 +1,6 @@
-/// <reference path="../../typings.d.ts">
+/// <reference path="../../typings.d.ts" />
 
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app.component';
 
-import { AppModule } from './app.module';
-
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+bootstrap(AppComponent);

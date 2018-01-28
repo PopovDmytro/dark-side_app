@@ -1,4 +1,4 @@
-/// <reference path="index.d.ts">
+/// <reference path="./typings/index.d.ts" />
 
 declare var require: any;
-declare var module: {id: string};
+declare var module: { id: string };
