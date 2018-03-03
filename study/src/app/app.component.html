@@ -1,1 +1,22 @@
-<p>Hello it is beginning !</p>
+<div class="wrapper">
+
+  <div class="content">
+
+    <p>Hello it is beginning !</p>
+    <hr>
+
+    <button class="btn btn-primary" (click)="onIncrease()">Increase number {{number}}</button>
+    <button mat-raised-button color="accent" (click)="onIncrease()">Increase number {{number}}</button>
+    <app-user [name]="rootName"  (nameChanged)="onNameChanged($event)" ></app-user>
+
+    <mat-form-field class="form-field">
+      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value"/>
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+
+</div>
+
