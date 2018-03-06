@@ -13,6 +13,8 @@ export class AppComponent {
   rootName = 'Root default name';
   number = 0;
 
+  rootItems = ['apples', 'bananas', 'cherries'];
+
   onNameChanged(newName) {
     this.rootName = newName;
   }
