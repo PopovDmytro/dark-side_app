@@ -1,7 +1,6 @@
 .wrapper {
   background-color: #212121;
   color: #fff;
-  min-height: 100vh;
 }
 .content {
   max-width: 80vw;
@@ -9,6 +8,7 @@
   padding: 20px;
   background-color: #525252;
   box-shadow: 0 0 7px 3px #0a0a0a;
+  min-height: 100vh;
 }
 
 :host ::ng-deep button[color="primary"] {
