@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Spok } from './spok';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello hi';
+  title = 'Hello hi asdasd';
+  today = new Date();
+
+  submitted = false;
+  // newSpok = new Spok(0, '','');
+
+  newSpok = {
+    stockAuthor: 'author',
+    stockCode: 'code'
+  };
+
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  cancel(){
+    this.submitted = false;
+    this.newSpok = new Spok(0, '','');
+  }
+
+  profile = {id: 10001, name: "Gkfmg mk", role: 'administrator'}
 }

@@ -1,0 +1,50 @@
+<hr>
+<div *ngIf="updateEnabled">
+  <label for="">
+    stock Code: <input type="text" #updateStockCode [value]="selectedStock.stockCode" >
+  </label>
+  <label>
+    stock Author: <input type="text" #updateStockAuthor [value]="selectedStock.author" >
+  </label>
+  <button type="button" (click)="updateStock(updateStockCode.value, updateStockAuthor.value)">Update</button>
+
+</div>
+<table style="width: 700px; text-align: left; margin: auto;">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>operations</th>
+      <th>author</th>
+      <th>stockCode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stock of stocks; index as i">
+      <td>{{stock.id}}</td>
+      <td>
+        <button type="button" (click)="loadDetails(stock)">Update</button>
+        <button type="button" (click)="deleteStock(stock.id)">Delete</button>
+      </td>
+      <td>{{stock.author}}</td>
+      <td>{{stock.stockCode}}</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<h2> Add stock </h2>
+<form action="">
+  <label for="">
+    stock Code <input #newStockCode id="stockCode" name="stockCode" required/>
+  </label>
+  <label for="">
+    stock Author <input #newAuthor id="author" name="author" required/>
+  </label>
+
+  <button type="submit" >validate</button>
+</form>
+
+<button (click)="createStock(newStockCode.value, newAuthor.value)" >add new stock</button>
+
+<!--form-->
+
+
