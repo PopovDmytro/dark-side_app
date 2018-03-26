@@ -16,6 +16,10 @@ export class DashboardComponent implements OnInit {
   constructor( private stockS: StockService ) {
   }
 
+  showTest($e){
+    console.log($e);
+  }
+
   ngOnInit() {
    this.getAllStocks();
   }

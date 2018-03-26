@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Spok } from './spok';
 
 @Component({
@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'Hello hi asdasd';
   today = new Date();
 
+  @Input() test:any;
+
   submitted = false;
   // newSpok = new Spok(0, '','');
 
@@ -17,6 +19,7 @@ export class AppComponent {
     stockAuthor: 'author',
     stockCode: 'code'
   };
+
 
 
   onSubmit() {
