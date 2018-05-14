@@ -8,8 +8,22 @@
         (click)="goal.isActiveGoal = !goal.isActiveGoal"></app-goal>
       <hr>
       <h1>My Quotes</h1>
-      <app-quote></app-quote>
-      <app-author></app-author>
+      <div class="interesting">
+        <app-quote
+          (click)="isFavorite = !isFavorite"
+          [ngClass]="{'favorite super-favorite': isFavorite}"
+          [ngStyle]="{'width': isFavorite ? '600px' : '300px', 'height.px': isFavorite ? 150 : 200}"
+        ></app-quote>
+      </div>
+      <button
+        class="btn btn-primary"
+        (click)="onShowBoring(boringBlock)">Show boring Quotes</button>
+      <div
+        style="display: none"
+        class="boring"
+        #boringBlock>
+        <app-quote></app-quote>
+      </div>
     </div>
   </div>
 </div>
