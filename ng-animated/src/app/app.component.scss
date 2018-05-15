@@ -1,1 +1,14 @@
+.nav {
+  padding: 20px 0;
+  border-bottom: 1px solid #777777;
+  justify-content: center;
+}
 
+.btn {
+  margin-right: 10px;
+
+  .active & {
+    background: #888888;
+    border-color: #777;
+  }
+}

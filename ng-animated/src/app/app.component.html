@@ -1,29 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <app-goal
-        *ngFor="let goal of courseGoals"
-        [ngClass]="{active: goal.isActiveGoal}"
-        [goal]="goal"
-        (click)="goal.isActiveGoal = !goal.isActiveGoal"></app-goal>
-      <hr>
-      <h1>My Quotes</h1>
-      <div class="interesting">
-        <app-quote
-          (click)="isFavorite = !isFavorite"
-          [ngClass]="{'favorite super-favorite': isFavorite}"
-          [ngStyle]="{'width': isFavorite ? '600px' : '300px', 'height.px': isFavorite ? 150 : 200}"
-        ></app-quote>
-      </div>
-      <button
-        class="btn btn-primary"
-        (click)="onShowBoring(boringBlock)">Show boring Quotes</button>
-      <div
-        style="display: none"
-        class="boring"
-        #boringBlock>
-        <app-quote></app-quote>
-      </div>
+      <ul class="nav nav-pills">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="btn btn-primary" routerLink="/">Projects</a></li>
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a class="btn btn-primary" routerLink="/users">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

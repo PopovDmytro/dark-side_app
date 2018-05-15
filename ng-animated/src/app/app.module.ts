@@ -1,24 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { GoalComponent } from './goal/goal.component';
-import { QuoteComponent } from './quote/quote.component';
-import { AuthorComponent } from './author/author.component';
-
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectsService } from './projects/projects.service';
+import { NewProjectComponent } from './new-project/new-project.component';
+import { UsersComponent } from './users/users.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoalComponent,
-    QuoteComponent,
-    AuthorComponent
+    ProjectsComponent,
+    ProjectComponent,
+    NewProjectComponent,
+    UsersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
