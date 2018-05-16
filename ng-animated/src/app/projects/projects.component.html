@@ -25,7 +25,10 @@
   </div>
 </div>
 <hr>
-<div class="row">
+<div
+  class="row"
+  [ngClass]="{'loading': progress === 'progressing'}"
+>
   <div class="col-12">
     <div
       class="loading-bar"
