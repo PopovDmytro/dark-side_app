@@ -1,14 +1,15 @@
-.nav {
-  padding: 20px 0;
-  border-bottom: 1px solid #777777;
-  justify-content: center;
+:host {
+  display: block;
+  padding: 10px;
 }
 
-.btn {
-  margin-right: 10px;
+#simple {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
 
-  .active & {
-    background: #888888;
-    border-color: #777;
-  }
+span {
+  display: inline-block;
+
 }
