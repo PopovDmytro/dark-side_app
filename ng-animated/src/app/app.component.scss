@@ -1,15 +1,14 @@
-:host {
-  display: block;
-  padding: 10px;
+.nav {
+  padding: 20px 0;
+  border-bottom: 1px solid #777777;
+  justify-content: center;
 }
 
-#simple {
-  width: 100px;
-  height: 100px;
-  background-color: orange;
-}
+.btn {
+  margin-right: 10px;
 
-span {
-  display: inline-block;
-
+  .active & {
+    background: #888888;
+    border-color: #777;
+  }
 }
