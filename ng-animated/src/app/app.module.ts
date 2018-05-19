@@ -11,6 +11,7 @@ import { ProjectsService } from './projects/projects.service';
 import { NewProjectComponent } from './new-project/new-project.component';
 import { UsersComponent } from './users/users.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NgAnimationsComponent } from './ng-animations/ng-animations.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProjectsComponent,
     ProjectComponent,
     NewProjectComponent,
-    UsersComponent
+    UsersComponent,
+    NgAnimationsComponent
   ],
   imports: [
     BrowserModule,

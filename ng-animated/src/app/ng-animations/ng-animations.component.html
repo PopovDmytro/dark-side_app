@@ -1,0 +1,2 @@
+<button (click)="isShown = !isShown">Toggle element</button>
+<p *ngIf="isShown" [@showState]="isShown ? 'shown' : 'notShown'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolores illum iure labore maxime nam nemo nobis quasi rem velit?</p>
