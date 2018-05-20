@@ -1,4 +1,4 @@
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
 
 export const markedTrigger = trigger('selectedProject', [
   state('default', style({
@@ -35,3 +35,83 @@ export const markedTrigger = trigger('selectedProject', [
     animate('300ms ease-out')
   ])
 ]);
+//---
+export const projectAnimationsTrigger = trigger( 'projectInOut', [
+  transition(':enter', [
+    // style({
+      // left: '100%',
+      // opacity: 0,
+      // transform: 'translateX(-100%)'
+    // }),
+    animate('0.5s cubic-bezier(.46,.34,.32,1.26)', keyframes([
+      style({
+        opacity: 0,
+        transform: 'translateX(-100%)',
+        offset: 0
+      }),
+      style({
+        opacity: 1,
+        transform: 'translateX(15%)',
+        offset: 0.4
+      }),
+      style({
+        opacity: 1,
+        transform: 'translateX(0)',
+        offset: 1
+      })
+    ]))
+  ]),
+  transition(':leave',[
+    animate('0.3s cubic-bezier(.46,.34,.32,1.26)', keyframes([
+      style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      }),
+      style({
+        transform: 'translateX(-15%)'
+      }),
+      style({
+        opacity: 0,
+        transform: 'translateX(100%)',
+      }),
+    ])),
+    animate('0.2s cubic-bezier(.46,.34,.32,1.26)', style({
+      height: '0',
+    }))
+  ]),
+  transition('slidUp => slidDown', [
+    style({
+      transform: 'translateY(-100%)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateY(0)'
+    }))
+  ]),
+  transition('slidDown => slidUp', [
+    style({
+      transform: 'translateY(0)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateY(-100%)'
+    }))
+  ])
+]);
+//---
+export const projectCreateNewTrigger = trigger('projectsCreateNew', [
+  transition(':enter', [
+    style({
+      maxHeight: '0'
+    }),
+    animate('0.5s cubic-bezier(.46,.34,.32,1.26)', style({
+      maxHeight: '1000px'
+    }))
+  ]),
+  transition(':leave',[
+    animate('0.5s cubic-bezier(.46,.34,.32,1.26)', style({
+        maxHeight: '0',
+        height: '0',
+        overflow: 'hidden',
+    }))
+  ])
+]);
+

@@ -41,7 +41,6 @@ export class NgAnimationsComponent implements OnInit {
     console.log(event);
   }
 
-
   onMouseOver(event) {
     // console.log(event);
 

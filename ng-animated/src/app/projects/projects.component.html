@@ -19,14 +19,15 @@
 <div class="row">
   <div class="col-12" style="overflow: hidden">
     <app-new-project
+      class="app-new-project"
       *ngIf="createNew"
       (projectCreated)="onProjectCreated($event)"
-      (creationCancelled)="createNew = false"></app-new-project>
+      (creationCancelled)="createNew = false" @projectsCreateNew></app-new-project>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 projects-list" >
     <div
       class="loading-bar"
       *ngIf="!projects">
@@ -35,14 +36,17 @@
         *ngIf="progress != 'finished'"></div>
     </div>
     <app-project
-      *ngFor="let prj of projects; let i = index"
+      *ngFor="let prj of displayedProjects; let i = index"
       class="{{prj.status}}"
       [ngClass]="{'current': markedPrjIndex === i}"
       [project]="prj"
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
       (click)="markedPrjIndex = i"
-      [@selectedProject]="markedPrjIndex === i ? 'selected' : 'default'"></app-project>
+      [@selectedProject]="markedPrjIndex === i ? 'selected' : 'default'"
+      @projectInOut
+      (@projectInOut.done)="onItemAnimated($event, i)"
+      ></app-project>
   </div>
 </div>
 <hr class="mb-5">

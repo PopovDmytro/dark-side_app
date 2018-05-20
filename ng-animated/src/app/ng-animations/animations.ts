@@ -19,7 +19,8 @@ export const showStateTrigger = trigger('showState', [
     }),
     animate(300)
   ]),
-  transition(':leave',animate(300, style({
+  transition(':leave',
+    animate(300, style({
     left: '100%',
     opacity: 0
   })))
