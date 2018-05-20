@@ -1,4 +1,4 @@
-import {animate, group, state, style, transition, trigger} from "@angular/animations";
+import {animate, group, query, state, style, transition, trigger} from "@angular/animations";
 
 export const buttonStateTrigger = trigger('btnState', [
   state('valid', style({
@@ -36,5 +36,17 @@ export const buttonStateTrigger = trigger('btnState', [
     animate(200, style({
       transform: 'scale(1)'
     }))
+  ])
+]);
+//new features
+export const formStateTrigger = trigger('formState', [
+  transition('* => *', [
+    query('input.ng-invalid:focus', [
+      animate(200, style({
+        transform: 'scale(1)',
+        backgroundColor: 'red'
+      })),
+      animate(200)
+    ], {optional: true})
   ])
 ]);
