@@ -1,6 +1,5 @@
 :host {
   display: block;
-  overflow-x: hidden;
 }
 
 p {
@@ -9,4 +8,42 @@ p {
   background: #3c763d;
   color: #ffffff;
   position: relative;
+}
+
+.test-2 {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.test-3 {
+  width: 200px;
+  height: 200px;
+  background: #4dc568;
+  position: relative;
+
+  &:before {
+    content: '';
+    background: rgba(#000, 0.1);
+    width: calc(100% + 50px);
+    height: calc(100% + 50px);
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    z-index: 1;
+  }
+}
+
+.inner-test {
+  background: #ffffff;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: 0.3s cubic-bezier(.46,.34,.32,1.26);
+}
+
+.test-result {
+  margin:  10px 0;
+  padding: 10px;
+  border: 1px solid black;
+  background: lightblue;
 }

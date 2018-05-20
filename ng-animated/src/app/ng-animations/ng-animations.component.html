@@ -1,2 +1,37 @@
 <button (click)="isShown = !isShown">Toggle element</button>
 <p *ngIf="isShown" [@showState]="isShown ? 'shown' : 'notShown'">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolores illum iure labore maxime nam nemo nobis quasi rem velit?</p>
+
+<hr>
+
+<button (click)="width = width - 50">Shrink</button>
+<button (click)="animate = true">Animate me</button>
+<p [@animateState]="animate ? 'animated' : 'noAnimation'"
+   [ngStyle]="{'width.px': width}" class="test-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis exercitationem fugit iure iusto laboriosam minus mollitia possimus praesentium unde voluptate.</p>
+
+<hr>
+<div style="overflow-x: hidden">
+<button (click)="onAddElement()">Add element</button>
+<div
+  *ngFor="let testResult of testResults"
+  @listState
+  (@listState.start)="onAnimationStarted($event)"
+  (@listState.done)="onAnimationDone($event)"
+  class="test-result">{{testResult}}</div>
+<hr>
+</div>
+
+<div
+  class="test-3"
+  (mouseenter)="isOver = true"
+  (mouseleave)="isOver = false"
+
+  (window:keydown)="onMouseOver($event)"
+  (mousemove)="onMouseOver($event)"
+>
+  <div
+    *ngIf="isOver"
+    class="inner-test"
+    [ngStyle]="{top: position.y - 10 + 'px', left: position.x - 10 + 'px'}"
+    >
+  </div>
+</div>
