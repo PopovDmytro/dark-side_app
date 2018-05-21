@@ -35,18 +35,19 @@
         class="loading-bar-element"
         *ngIf="progress != 'finished'"></div>
     </div>
-    <app-project
-      *ngFor="let prj of displayedProjects; let i = index"
-      class="{{prj.status}}"
-      [ngClass]="{'current': markedPrjIndex === i}"
-      [project]="prj"
-      (statusUpdated)="onStatusUpdated($event, i)"
-      (projectDeleted)="onProjectDeleted(i)"
-      (click)="markedPrjIndex = i"
-      [@selectedProject]="markedPrjIndex === i ? 'selected' : 'default'"
-      @projectInOut
-      (@projectInOut.done)="onItemAnimated($event, i)"
+    <div class="" [@listState]="projects?.length">
+      <app-project
+        *ngFor="let prj of projects; let i = index"
+        class="{{prj.status}}"
+        [ngClass]="{'current': markedPrjIndex === i}"
+        [project]="prj"
+        (statusUpdated)="onStatusUpdated($event, i)"
+        (projectDeleted)="onProjectDeleted(i)"
+        (click)="markedPrjIndex = i"
+        [@selectedProject]="markedPrjIndex === i ? 'selected' : 'default'"
+        @projectInOut
       ></app-project>
+    </div>
   </div>
 </div>
 <hr class="mb-5">

@@ -4,7 +4,7 @@ import { AnimationEvent } from "@angular/animations";
 import { Project } from './project.model';
 
 import { ProjectsService } from './projects.service';
-import {markedTrigger, projectAnimationsTrigger, projectCreateNewTrigger} from "./animations";
+import {listStateTrigger, markedTrigger, projectAnimationsTrigger, projectCreateNewTrigger} from "./animations";
 import {routeSlideTrigger, routeStateTrigger} from "../shared/route-animations";
 
 @Component({
@@ -16,7 +16,8 @@ import {routeSlideTrigger, routeStateTrigger} from "../shared/route-animations";
     projectAnimationsTrigger,
     projectCreateNewTrigger,
     routeStateTrigger,
-    routeSlideTrigger
+    routeSlideTrigger,
+    listStateTrigger
   ]
 })
 export class ProjectsComponent implements OnInit {
@@ -29,7 +30,6 @@ export class ProjectsComponent implements OnInit {
   progress = 'progressing';
   createNew = false;
   projectAnimateState = 'default';
-  displayedProjects: Project[] = [];
 
   constructor(private prjService: ProjectsService) { }
 
@@ -39,9 +39,6 @@ export class ProjectsComponent implements OnInit {
         (prj: Project[]) => {
           this.progress = 'finished';
           this.projects = prj;
-          if(this.projects.length >= 1) {
-            this.displayedProjects.push(this.projects[0]);
-          }
         }
       );
   }
@@ -63,14 +60,4 @@ export class ProjectsComponent implements OnInit {
     // this.projects.push(project);
   }
 
-  onItemAnimated(animationEvent: AnimationEvent, lastProjectId: number) {
-    if(animationEvent.fromState != 'void') {
-      return;
-    }
-    if(this.projects.length > lastProjectId + 1) {
-      this.displayedProjects.push(this.projects[lastProjectId + 1]);
-    } else {
-      this.projects = this.displayedProjects;
-    }
-  }
 }
