@@ -6,14 +6,14 @@ import {routeSlideTrigger, routeStateTrigger} from "../shared/route-animations";
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
   animations: [
-    routeStateTrigger,
+    routeStateTrigger({startOpacity: 0, duration: '1500ms'}),
     routeSlideTrigger
   ]
 })
 export class UsersComponent implements OnInit {
 
-  // @HostBinding('@routeState') routerAnimation = true;
-  @HostBinding('@routeSlideState') routerSlideAnimation = true;
+  @HostBinding('@routeState') routerAnimation = true;
+  // @HostBinding('@routeSlideState') routerSlideAnimation = true;
 
   constructor() { }
 

@@ -15,7 +15,7 @@ import {routeSlideTrigger, routeStateTrigger} from "../shared/route-animations";
     markedTrigger,
     projectAnimationsTrigger,
     projectCreateNewTrigger,
-    routeStateTrigger,
+    // routeStateTrigger(),
     routeSlideTrigger,
     listStateTrigger
   ]
