@@ -6,8 +6,8 @@ import { UsersComponent } from './users/users.component';
 import { NgAnimationsComponent } from "./ng-animations/ng-animations.component";
 
 const appRoutes: Routes = [
-  { path: '', component: ProjectsComponent },
-  { path: 'users', component: UsersComponent },
+  { path: '', component: ProjectsComponent, data: {animation: {page: 'rootPage'}} },
+  { path: 'users', component: UsersComponent, data: {animation: {page: 'usersPage'}} },
   { path: 'nganimations', component: NgAnimationsComponent }
 ];
 

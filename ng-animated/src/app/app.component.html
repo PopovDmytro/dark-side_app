@@ -9,8 +9,8 @@
     </div>
   </div>
   <div class="row" style="overflow: hidden">
-    <div class="col-12">
-      <router-outlet></router-outlet>
+    <div class="col-12" [@routeNewState]="getAnimationsData(rOutlet)">
+      <router-outlet #rOutlet="outlet"></router-outlet>
     </div>
   </div>
 </div>
