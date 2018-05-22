@@ -8,7 +8,7 @@ import {animate, animateChild, group, query, style, transition, trigger} from "@
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('routeNewState', [
-      // transition('rootPage => usersPAge', )
+      // transition('rootPage => usersPAge', ) does not work in ng 4.2
       transition('* => *', [
         group([
           query(':enter',[
